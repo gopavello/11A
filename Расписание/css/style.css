@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400; }
+
+/*--------------------*/
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px; 
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background: #4177EB;
+  height: 70px;
+  z-index: 100;
+}
+header .container {
+  height: 70px;
+  max-width: 700px;
+}
+.header-menu {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-menu__link {
+  position: relative;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+.header-menu__link img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .container a:hover {
+  color: #F7C51E;
+  transition: all 0.5s ease 0s;
+}
+header .container a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 70px;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #F7C51E;
+  opacity: 0;
+  transition: all 0.7s ease 0s;
+}
+header .container a:hover::before {
+  opacity: 1;
+}
+.burger {
+  display: none;
+  position: relative;
+  z-index: 11;
+  left: 20px;
+  top: 24px;
+}
+.burger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #b89a67;
+    margin: 0 0 5px;
+    transition: all 0.3s ease 0s;
+}
+.burger._active span:first-child {
+  transform: translate(0, 7px) rotate(45deg);
+}
+.burger._active span:nth-child(2) {
+  transform: scale(0);
+}
+.burger._active span:last-child {
+  transform: translate(0, -9px) rotate(-45deg);
+}
+body.lock {
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+  .header-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 5;
+    left: -120%;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease 0s;
+  }
+  .header-menu__link {
+    margin: 0 0 30px;
+    color: #000;
+  }
+  .header-menu:after {
+    content: '';
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    background: #4177EB;
+  }
+  .header-menu._active {
+    left: 0px;
+  }
+}
+
+
+.main {
+  padding: 120px 20px 50px;
+  background: url('../../img/images.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.main table {
+  font-style: italic;
+  color: #fff;
+  background: #6CAD72;
+  border: 1px solid #6CAD72;
+  border-radius: 20px;
+  text-align: center;
+  overflow-x: auto;
+}
+.table-res {
+  overflow-x: auto;
+  padding: 0 20px;
+}
+.main table th {
+  font-size: 18px;
+  padding: 10px;
+}
+.main table tr:first-child th:first-child {
+  border-top-left-radius: 20px;
+}
+ .main table tr:first-child th:last-child  {
+  border-top-right-radius: 20px;
+ }
+.main table tr:last-child th:first-child {
+  border-bottom-left-radius: 20px;
+}
+.main table tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+.main th:nth-child(odd) {
+  background: #FF8900;
+}
+.main th:nth-child(even) {
+  background: #FFBC00;
+}
+.main tr:nth-child(even) th {
+  background: #FFBC00;
+}
+.main table td {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #fff;
+}
+.main tr:hover {
+  transition: all 0.3s;
+  background: #00FF80;
+}
+
+
+footer {
+  background: #4177EB;
+  height: 70px;
+}
+footer .container {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container p {
+  font-size: 20px;
+  color: #B0AEA8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
